@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="People tests ">
+
+    <test name="People smoke">
+        <classes>
+            <class name="PartnershipTest"/>
+            <class name="PersonTests"/>
+            <class name="RetiredTest"/>
+        </classes>
+    </test>
+</suite>
