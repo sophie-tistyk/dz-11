@@ -15,6 +15,16 @@ public class RetiredTest {
     }
 
     @Test
+    public void testManIsNotRetired() {
+        Assert.assertFalse(man.isRetired(), "This man is retired");
+
+    }
+
+    @Test
+    public void testWomanIsRetired() {
+        Assert.assertTrue(woman.isRetired(), "This woman is not retired");
+    }
+    @Test
     public void testWomanIsNotRetired() {
         Assert.assertFalse(woman.isRetired(), "This woman is retired");
     }

@@ -6,9 +6,9 @@ import org.testng.annotations.Test;
 public class PersonTests {
     private Person person;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setPerson() {
-        person = new Person("Sophie", "Tistyk", 27) {
+        person = new Person("Anna", "Martina", 27) {
             @Override
             public boolean isRetired() {
                 return false;
@@ -16,42 +16,42 @@ public class PersonTests {
         };
     }
 
-    @Test
+    @Test(groups = {"GetterSetter"})
     public void testGetFirstName() {
         String firstName = person.getFirstName();
-        Assert.assertEquals(firstName, "Sophie", "Wrong first name");
+        Assert.assertEquals(firstName, "Anna", "Wrong first name");
     }
 
-    @Test
+    @Test(groups = {"GetterSetter"})
     public void testSetFirstName() {
         person.setFirstName("Anna");
         String firstName = person.getFirstName();
-        Assert.assertEquals("Anna", firstName, "Wrong first name");
+        Assert.assertEquals(firstName,"Anna",  "Wrong first name");
     }
 
-    @Test
+    @Test(groups = {"GetterSetter"})
     public void testGetLastName() {
         String lastName = person.getLastName();
         Assert.assertEquals(lastName, "Martina", "Wrong last name");
     }
 
-    @Test
+    @Test(groups = {"GetterSetter"})
     public void testSetLastName() {
         person.setLastName("Martina");
         String lastName = person.getLastName();
-        Assert.assertEquals("Martina", lastName, "Wrong last name");
+        Assert.assertEquals( lastName, "Martina","Wrong last name");
     }
 
-    @Test
+    @Test(groups = {"GetterSetter"})
     public void testGetAge() {
         int age = person.getAge();
         Assert.assertEquals(age, 27, "Wrong age");
     }
 
-    @Test
+    @Test(groups = {"GetterSetter"})
     public void testSetAge() {
         person.setAge(27);
         int age = person.getAge();
-        Assert.assertEquals(27, age, "Wrong age");
+        Assert.assertEquals( age, 27,"Wrong age");
     }
 }
